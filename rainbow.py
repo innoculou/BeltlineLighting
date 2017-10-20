@@ -1,8 +1,5 @@
 #!/usr/bin/python
 
-import sys
-sys.path.insert(0, '..')
-
 import time
 from dotstar import Adafruit_DotStar
 
@@ -30,7 +27,7 @@ stop_blue = stop_red * 2
 
 while True:
     for i in range(numpixels):
-        strip.setPixelColor(i, 255, 0, 0)
+        strip.setPixelColor(i, 0, 255, 255)
         time.sleep(4)
 
     strip.show()                     # Refresh strip
