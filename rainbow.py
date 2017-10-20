@@ -26,10 +26,12 @@ change_every = int(numpixels / len(rgb))
 
 every_pixel = []
 for i in range(numpixels):
-    every_pixel.push([rgb[int(i / change_every)][1], rgb[int(i / change_every)][2], rgb[int(i / change_every)][0]])
+    every_pixel.append([rgb[int(i / change_every)][1], rgb[int(i / change_every)][2], rgb[int(i / change_every)][0]])
 
 while True:
-    for i in range(every_pixel):
+    for i in range(len(every_pixel)):
         strip.setPixelColor(i, every_pixel[i][0], every_pixel[i][1], every_pixel[i][2])
+    last_value = every_pixel.pop()
+    every_pixel.insert(0, last_value)
     strip.show()                     # Refresh strip
-    time.sleep(4)
+    time.sleep(0.03)
