@@ -27,6 +27,6 @@ rgb = [
 
 while True:
     for i in range(numpixels):
-        strip.setPixelColor(i, rgb[0].r, rgb[0].g, rgb[0].b)
+        strip.setPixelColor(i, rgb[0][r], rgb[0][g], rgb[0][b])
     strip.show()                     # Refresh strip
     time.sleep(4)
