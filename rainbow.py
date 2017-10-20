@@ -24,8 +24,12 @@ strip.setBrightness(64) # Limit brightness to ~1/4 duty cycle
 rgb = [[255, 0, 0],[255, 84, 0],[255, 233, 0],[182, 255, 0],[106, 255, 0],[0, 255, 89],[0, 242, 255],[0, 4, 255],[170, 0, 255],[255, 0, 131]]
 change_every = int(numpixels / len(rgb))
 
+every_pixel = []
+for i in range(numpixels):
+    every_pixel.push([rgb[int(i / change_every)][1], rgb[int(i / change_every)][2], rgb[int(i / change_every)][0]])
+
 while True:
-    for i in range(numpixels):
-        strip.setPixelColor(i, rgb[int(i / change_every)][1], rgb[int(i / change_every)][2], rgb[int(i / change_every)][0])
+    for i in range(every_pixel):
+        strip.setPixelColor(i, every_pixel[i][0], every_pixel[i][1], every_pixel[i][2])
     strip.show()                     # Refresh strip
     time.sleep(4)
