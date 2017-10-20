@@ -28,6 +28,5 @@ stop_blue = stop_red * 2
 while True:
     for i in range(numpixels):
         strip.setPixelColor(i, 0, 255, 255)
-        time.sleep(4)
-
     strip.show()                     # Refresh strip
+    time.sleep(4)
