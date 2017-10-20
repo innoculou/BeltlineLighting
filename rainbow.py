@@ -21,12 +21,12 @@ strip     = Adafruit_DotStar(numpixels, datapin, clockpin)
 strip.begin()           # Initialize pins for output
 strip.setBrightness(64) # Limit brightness to ~1/4 duty cycle
 
-stop_red = 0
 stop_green = numpixels / 3
 stop_blue = stop_red * 2
+stop_red = numpixels
 
 while True:
     for i in range(numpixels):
-        strip.setPixelColor(i, i, 255, 255)
+        strip.setPixelColor(i, i, i, i)
     strip.show()                     # Refresh strip
     time.sleep(4)
