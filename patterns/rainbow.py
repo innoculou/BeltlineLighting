@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+import sys
+sys.path.insert(0, '..')
+
 import time
 from dotstar import Adafruit_DotStar
 
