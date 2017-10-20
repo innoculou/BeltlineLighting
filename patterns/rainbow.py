@@ -28,6 +28,9 @@ stop_red = 0
 stop_green = numpixels / 3
 stop_blue = stop_red * 2
 
+while True:
+    for i in range(numpixels):
+        strip.setPixelColor(i, i, 0, 0)
+        time.sleep(1)
 
-for i in range(numpixels):
-    strip.setPixelColor(i, i, 0, 0)
+    strip.show()                     # Refresh strip
