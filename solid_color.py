@@ -18,11 +18,11 @@ strip     = Adafruit_DotStar(numpixels, datapin, clockpin)
 
 # Append "order='gbr'" to declaration for proper colors w/older DotStar strips)
 strip.begin()           # Initialize pins for output
-strip.setBrightness(32) # Limit brightness to ~1/4 duty cycle
+strip.setBrightness(192) # Limit brightness to ~1/4 duty cycle
 
 # green, red, blue
 
 for i in range(numpixels):
-    strip.setPixelColor(i, 155, 155, 50)
+    strip.setPixelColor(i, 155, 255, 50)
 
 strip.show()                     # Refresh strip
