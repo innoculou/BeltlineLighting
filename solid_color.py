@@ -21,8 +21,10 @@ strip.begin()           # Initialize pins for output
 strip.setBrightness(192) # Limit brightness to ~1/4 duty cycle
 
 # green, red, blue
-
+h = raw_input('Enter hex: ').lstrip('#')
+j = tuple(int(h[i:i+2], 16) for i in (0, 2 ,4))
+print j
 for i in range(numpixels):
-    strip.setPixelColor(i, 155, 255, 50)
+    strip.setPixelColor(i, j[0], j[1], j[2])
 
 strip.show()                     # Refresh strip
