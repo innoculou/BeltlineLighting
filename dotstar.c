@@ -131,7 +131,7 @@ static PyObject *DotStar_new(
 	uint32_t       n_pixels = 0, bitrate = 8000000, i;
 	PyObject      *string;
 	char          *order    = NULL, *c;
-	uint8_t        rOffset = 2, gOffset = 3, bOffset = 1; // BRG default
+	uint8_t        rOffset = 3, gOffset = 2, bOffset = 1; // BRG default
 
 	switch(PyTuple_Size(arg)) {
 	   case 3: // Pixel count, data pin, clock pin
