@@ -3,7 +3,7 @@
 import time
 from dotstar import Adafruit_DotStar
 
-numpixels = 144  # Number of LEDs in strip
+numpixels = 168  # Number of LEDs in strip
 
 # Here's how to control the strip from any two GPIO pins:
 datapin = 17
@@ -25,7 +25,8 @@ hexColor = [
     'ffef00', 'bfd408', '80b80f', '409d17',
     '00811f', '007257', '00628f', '0053c7',
     '0044ff', '1e33e1', '3b22c4', '5811a7',
-    '760089', '920067', 'ae0045', 'cb0022'
+    '760089', '920067', 'ae0045', 'cb0022',
+    'd0001c', 'd40017', 'd90011', 'e00008'
 ]
 
 change_every = int(numpixels / len(hexColor))
@@ -42,7 +43,7 @@ for i in range(numpixels):
 
 while True:
     for i in range(len(every_pixel)):
-        rgb = getRGB(every_pixel[i])
+        rgb = getRGB(every_pixel[i-1])
         strip.setPixelColor(i, rgb[0], rgb[1], rgb[2])
     last_value = every_pixel.pop()
     every_pixel.insert(0, last_value)
